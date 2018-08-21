@@ -64,7 +64,7 @@ class Owner
   end
 
   def list_pets
-    self.pets[0].count
+    self.pets[0]
     binding.pry
 
 
