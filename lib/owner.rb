@@ -7,7 +7,6 @@ class Owner
     @owner = owner
     @@all << self
     @species = species
-    @pets = {:fishes [], :dogs [], :cats []}
   end
 
   def self.all
@@ -30,5 +29,8 @@ class Owner
     @name = name
   end
 
+  def pets
+    @pets = {:fishes [], :dogs [], :cats []}
+  end
 
 end
