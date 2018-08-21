@@ -9,9 +9,9 @@ class Owner
     @owner = owner
     @@all << self
     @species = species
-    @pets = pets
+    @pets = {:fishes => [], :dogs => [], :cats => []}
   end
-binding.pry
+
   def self.all
     @@all
   end
@@ -32,12 +32,12 @@ binding.pry
     @name = name
   end
 
-  def pets
-    pets = {:fishes => [], :dogs => [], :cats => []}
-  end
+  # def pets
+  #   pets = {:fishes => [], :dogs => [], :cats => []}
+  # end
 
   def buy_fish(name)
-    owner.pets[:fishes] << name
+    self.pets[:fishes] << name
   end
 
 end
