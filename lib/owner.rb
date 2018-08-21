@@ -11,7 +11,7 @@ class Owner
     @species = species
     @pets = pets
   end
-
+binding.pry
   def self.all
     @@all
   end
