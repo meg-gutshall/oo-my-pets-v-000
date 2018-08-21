@@ -68,7 +68,6 @@ class Owner
     dog_count = self.pets[:dogs].count
     cat_count = self.pets[:cats].count
     "I have #{fish_count} fish, #{dog_count} dog(s), and #{cat_count} cat(s)."
-    # binding.pry
   end
 
 end
