@@ -64,6 +64,9 @@ class Owner
   end
 
   def list_pets
+    self.pets[0].count
+
+
     puts "I have X fish, X dog(s), and X cat(s)."
   end
 
