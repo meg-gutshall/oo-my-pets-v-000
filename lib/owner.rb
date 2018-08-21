@@ -7,6 +7,7 @@ class Owner
     @owner = owner
     @@all << self
     @species = species
+    @name = name
   end
 
   def self.all
@@ -25,8 +26,9 @@ class Owner
     return "I am a human."
   end
 
-  def name=(name)
-    @name = name
-  end
+  # def name=(name)
+  #   @name = name
+  # end
+
 
 end
