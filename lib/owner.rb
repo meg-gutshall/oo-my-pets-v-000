@@ -7,6 +7,7 @@ class Owner
     @owner = owner
     @@all << self
     @species = species
+    @pets = pets
   end
 
   def self.all
