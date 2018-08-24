@@ -1,10 +1,9 @@
 class Owner
-  attr_accessor :owner, :pets
+  attr_accessor :pets
   attr_reader :species, :name
   @@all = []
 
   def initialize(species)
-    @owner = owner
     @@all << self
     @species = species
     @pets = {:fishes => [], :dogs => [], :cats => []} # All pets for owner instance
@@ -32,35 +31,32 @@ class Owner
   end
 
   def buy_fish(name)
-    new_fish = Fish.new(name)
-    self.pets[:fishes] << new_fish # Add fish to owner's pets
+    self.pets[:fishes] << Fish.new(name) # Create new fish and add to owner's pets
   end
 
   def buy_cat(name)
-    new_cat = Cat.new(name)
-    self.pets[:cats] << new_cat # Add cat to owner's pets
+    self.pets[:cats] << Cat.new(name) # Create new cat and add to owner's pets
   end
 
   def buy_dog(name)
-    new_dog = Dog.new(name)
-    self.pets[:dogs] << new_dog # Add dog to owner's pets
+    self.pets[:dogs] << Dog.new(name) # Create new dog and add to owner's pets
   end
 
   def walk_dogs
-    self.pets[:dogs].each {|dog_array| dog_array.mood = "happy"}
+    self.pets[:dogs].each {|dog| dog.mood = "happy"}
   end
 
   def play_with_cats
-    self.pets[:cats].each {|dog_array| dog_array.mood = "happy"}
+    self.pets[:cats].each {|cat| cat.mood = "happy"}
   end
 
   def feed_fish
-    self.pets[:fishes].each {|dog_array| dog_array.mood = "happy"}
+    self.pets[:fishes].each {|fish| fish.mood = "happy"}
   end
 
   def sell_pets
-    self.pets.each {|type, pet| pet.each {|pet_array| pet_array.mood = "nervous"}}
-    @pets.clear
+    self.pets.each {|type, pets| pets.each {|pet| pet.mood = "nervous"}}
+    pets.clear
   end
 
   def list_pets
